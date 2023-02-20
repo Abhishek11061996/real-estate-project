@@ -2,10 +2,27 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import { Button, Paper, Center, Text } from '@mantine/core'
+// import { ArticleCardImage } from './ArticleCardImage'
+import {  HeaderResponsive } from './HeaderResponsive'
+// import { HeaderMenu } from './HeaderMenu'
+import  HeroContentLeft  from './HeroContentLeft'
+import  {HeroImageRight}  from './HeroImageRight'
+// import {  ArticlesCardsGrid } from './ArticlesCardsGrid'
+import Second_Card_Grid from './Second_Card_Grid'
+import Cards from './Cards'
+// import Recently_Added_Card from './NewCArd'
+import FooterResponsive from './FooterResponsive'
+import NewCard from './NewCArd'
+
+
+// import FooterLinks from './FooterLinks'
+ 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home() { 
+  
   return (
     <>
       <Head>
@@ -14,110 +31,108 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
+      <Paper shadow="xs" p="md" >
+      <HeaderResponsive links={[
+         {
+          "link": "/about",
+          "label": "Features"
+        },
+        {
+          "link": "/pricing",
+          "label": "Pricing"
+        },
+        {
+          "link": "/learn",
+          "label": "Learn"
+        },
+        {
+          "link": "/community",
+          "label": "Community"
+        }
+      ]} />
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
+      {/* <HeaderMenu links={[
+        {
+          "link": "/about",
+          "label": "Features"
+        },
+        {
+          "link": "#1",
+          "label": "Learn",
+          "links": [
+            {
+              "link": "/docs",
+              "label": "Documentation"
+            },
+            {
+              "link": "/resources",
+              "label": "Resources"
+            },
+            {
+              "link": "/community",
+              "label": "Community"
+            },
+            {
+              "link": "/blog",
+              "label": "Blog"
+            }
+          ]
+        },
+        {
+          "link": "/about",
+          "label": "About"
+        },
+        {
+          "link": "/pricing",
+          "label": "Pricing"
+        },
+        {
+          "link": "#2",
+          "label": "Support",
+          "links": [
+            {
+              "link": "/faq",
+              "label": "FAQ"
+            },
+            {
+              "link": "/demo",
+              "label": "Book a demo"
+            },
+            {
+              "link": "/forums",
+              "label": "Forums"
+            }
+          ]
+        }
+      ]}/> */}
+    <HeroContentLeft/>
+      {/* <div style={{marginTop: 30 }}>
+      <h1 style={{textAlign:'center'}}>We are Available in many</h1>
+      <h1 style={{textAlign:'center'}}>Well-known countries</h1>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      </div> */}
+      <Cards/>
+   {/* <div style={{display:'flex', justifyContent:'center'}}>
+   <ArticleCardImage image={'https://images.unsplash.com/photo-1498174979972-c9de7e6a93d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'} title={'America'} />
+     <ArticleCardImage image={'https://images.unsplash.com/photo-1498174979972-c9de7e6a93d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'} title={'America'} />
+     <ArticleCardImage image={'https://images.unsplash.com/photo-1498174979972-c9de7e6a93d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'} title={'America'} />
+     <ArticleCardImage image={'https://images.unsplash.com/photo-1498174979972-c9de7e6a93d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'} title={'America'} />
+    
+   </div> */}
+{/* <div style={{marginTop:'30px'}}>
+<h1 style={{marginLeft:'65px'}}>Recently Added</h1>
+</div> */}
+   {/* <ArticlesCardsGrid/> */}
+   {/* <Second_Card_Grid/> */}
+   <NewCard/>
+   <HeroImageRight/>
+   
+   <FooterResponsive/>
+   
+   {/* <FooterLinks/> */}
+   </Paper>
     </>
   )
 }
+
+
