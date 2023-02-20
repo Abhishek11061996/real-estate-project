@@ -99,7 +99,7 @@ export default function Home() {
               "label": "Book a demo"
             },
             {
-              "link": "/forums",
+              "link": "/forums",miy
               "label": "Forums"
             }
           ]
